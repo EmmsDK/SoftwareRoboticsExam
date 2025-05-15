@@ -9,11 +9,12 @@ This robot fetches, cleans, and stores data for Gen1 Pokémon or by specific typ
 - `Clean Gen1 Data`
 - `Full Pipeline Gen1`
 - `Full Pipeline Type`
-- `Health Check` (optional)
 
 ### How to Run:
 
 ```bash
-rcc run -t "Fetch Gen1"
-rcc run -t "Fetch By Type" -- fire
+
+rcc run -t "Full Pipeline Gen1"
+
+rcc run -t "Full Pipeline By Type" -- "type"
 ```

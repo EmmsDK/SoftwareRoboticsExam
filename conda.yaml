@@ -15,6 +15,7 @@ dependencies:
     - robocorp-browser==2.3.4     # https://pypi.org/project/robocorp-browser
     - pandas==2.1.0              # https://pandas.pydata.org/docs/whatsnew/2.1.0.html
     - openpyxl==3.1.2             # https://openpyxl.readthedocs.io/en/stable/whats_new.html
+    - numpy==1.26.4   # ✅ Add this line
 
 
     

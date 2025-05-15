@@ -1,13 +1,20 @@
+import os
 import requests
 import csv
 import logging
 from robocorp.tasks import task
 
 # -------------------------------
+# Ensure directories exist
+# -------------------------------
+os.makedirs("data", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
+
+# -------------------------------
 # Setup logging
 # -------------------------------
 logging.basicConfig(
-    filename="output/data_extraction.log",
+    filename="logs/data_extraction.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
@@ -44,15 +51,13 @@ def fetch_pokemon_data(pokemon_id):
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
             data = response.json()
-            pokemon_info = {
+            return {
                 "id": data["id"],
                 "name": data["name"],
                 "height": data["height"],
                 "weight": data["weight"],
                 "types": extract_pokemon_types(data["types"])
             }
-            logging.info(f"Fetched {pokemon_info['name']} (ID {pokemon_info['id']})")
-            return pokemon_info
         else:
             logging.warning(f"Failed to fetch ID {pokemon_id} — Status code: {response.status_code}")
             return None
@@ -70,12 +75,12 @@ def main():
         logging.error("Aborted task due to API being unreachable.")
         return
 
-    filename = "first_gen_pokemon.csv"
+    filename = "data/pokemon_gen1.csv"
     headers = ["ID", "Name", "Height", "Weight", "Types"]
 
     try:
         with open(filename, mode="w", newline="", encoding="utf-8") as csvfile:
-            logging.info("Opened CSV file for writing.")
+            logging.info(f"Opened {filename} for writing.")
             writer = csv.DictWriter(csvfile, fieldnames=headers)
             writer.writeheader()
 
@@ -89,8 +94,9 @@ def main():
                         "Weight": pokemon_data["weight"],
                         "Types": pokemon_data["types"]
                     })
+
             logging.info("All data written to CSV successfully.")
-            print("✅ Data extraction complete.")
+            print(f"✅ Data extraction complete. File saved as {filename}")
 
     except PermissionError as e:
         logging.error(f"Permission denied: {e}")

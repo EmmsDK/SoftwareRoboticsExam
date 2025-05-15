@@ -7,7 +7,7 @@ from datetime import datetime
 # Setup logging
 # -------------------------------
 logging.basicConfig(
-    filename="output/cleaning.log",
+    filename="logs/cleaning.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
@@ -16,8 +16,8 @@ logging.basicConfig(
 # Main Cleaning & Transformation Process
 # -------------------------------
 try:
-    # Load the raw CSV file
-    df = pd.read_csv("first_gen_pokemon.csv")
+    # Load the raw CSV file (from output folder)
+    df = pd.read_csv("data/pokemon_gen1.csv")
     logging.info("CSV file loaded successfully.")
 
     # Capitalize the first letter of each Pokémon name
@@ -35,19 +35,19 @@ try:
     df["SecondaryType"] = types_split[1]  # NaN if no secondary type
 
     # Save cleaned data to Excel
-    df.to_excel("output/pokemon_cleaned.xlsx", index=False)
-    logging.info("Cleaned data saved to output/pokemon_cleaned.xlsx")
+    df.to_excel("output/pokemon_gen1_cleaned.xlsx", index=False)
+    logging.info("Cleaned data saved to output/pokemon_gen1_cleaned.xlsx")
 
 except Exception as e:
     logging.error(f"Error during data cleaning process: {e}")
 
 # -------------------------------
-# Optional: Save Cleaned Data to SQLite Database
+# Save Cleaned Data to SQLite Database
 # -------------------------------
 try:
-    conn = sqlite3.connect("output/pokemon.db")
+    conn = sqlite3.connect("output/pokemon_gen1.db")
     df.to_sql("pokemon", conn, if_exists="replace", index=False)
     conn.close()
-    logging.info("Cleaned data saved to SQLite database at output/pokemon.db")
+    logging.info("Cleaned data saved to SQLite database at output/pokemon_gen1.db")
 except Exception as e:
     logging.error(f"Error saving data to database: {e}")

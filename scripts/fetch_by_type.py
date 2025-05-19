@@ -54,7 +54,7 @@ def get_pokemon_details(name):
 def main():
     # Type should be passed using: rcc run -t "Fetch By Type" -- fire
     if len(sys.argv) < 2:
-        print("❌ Please provide a Pokémon type as an argument.")
+        print("Please provide a Pokémon type as an argument.")
         print("Example: rcc run -t \"Fetch By Type\" -- fire")
         return
 
@@ -63,7 +63,7 @@ def main():
 
     names = get_pokemon_names_by_type(pokemon_type)
     if not names:
-        print(f"❌ No Pokémon found for type '{pokemon_type}'")
+        print(f"No Pokémon found for type '{pokemon_type}'")
         return
 
     output_file = f"data/pokemon_type_{pokemon_type}.csv"
@@ -77,10 +77,10 @@ def main():
             details = get_pokemon_details(name)
             if details:
                 writer.writerow(details)
-                print(f"✅ Fetched: {details['Name']}")
+                print(f"Fetched: {details['Name']}")
                 sleep(0.5)
 
-    print(f"\n📁 Done! Saved data to {output_file}")
+    print(f"\nDone! Saved data to {output_file}")
 
 # -------------------------------
 # Entry point check

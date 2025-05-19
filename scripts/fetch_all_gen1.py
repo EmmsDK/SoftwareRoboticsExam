@@ -71,7 +71,7 @@ def fetch_pokemon_data(pokemon_id):
 @task
 def main():
     if not is_api_available():
-        print("❌ API not available. Aborting data extraction.")
+        print("API not available. Aborting data extraction.")
         logging.error("Aborted task due to API being unreachable.")
         return
 
@@ -96,11 +96,11 @@ def main():
                     })
 
             logging.info("All data written to CSV successfully.")
-            print(f"✅ Data extraction complete. File saved as {filename}")
+            print(f"Data extraction complete. File saved as {filename}")
 
     except PermissionError as e:
         logging.error(f"Permission denied: {e}")
-        print("❌ File is in use. Please close Excel or any program using the CSV and try again.")
+        print("File is in use. Please close Excel or any program using the CSV and try again.")
     except Exception as e:
         logging.error(f"Critical error during data extraction: {e}")
-        print("❌ Failed to complete data extraction.")
+        print("Failed to complete data extraction.")

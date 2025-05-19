@@ -1,20 +1,20 @@
 import subprocess
 
-print("🔄 Starting data extraction with Robocorp task...")
+print("Starting data extraction with Robocorp task...")
 result1 = subprocess.run(["rcc", "run", "-t", "Fetch Gen1"])
 if result1.returncode != 0:
-    print("❌ Data extraction failed.")
+    print("Data extraction failed.")
     exit(1)
 
-print("✅ Data extraction complete.")
+print("Data extraction complete.")
 
-print("🔄 Running cleaning and transformation...")
+print("Running cleaning and transformation...")
 result2 = subprocess.run(["python", "scripts/clean_gen1_data.py"])
 if result2.returncode != 0:
-    print("❌ Cleaning and transformation failed.")
+    print("Cleaning and transformation failed.")
     exit(2)
 
-print("✅ Full pipeline finished successfully.")
+print("Full pipeline finished successfully.")
 
 
 ## This will:

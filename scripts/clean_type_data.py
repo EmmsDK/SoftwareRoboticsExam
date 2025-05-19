@@ -18,7 +18,7 @@ logging.basicConfig(
 # -------------------------------
 def main():
     if len(sys.argv) < 2:
-        print("❌ Please provide the Pokémon type to clean.")
+        print("Please provide the Pokémon type to clean.")
         print("Example: rcc run -t \"Clean By Type\" -- fire")
         return
 
@@ -28,7 +28,7 @@ def main():
     output_db = f"output/pokemon_type_{pokemon_type}.db"
 
     if not os.path.exists(input_file):
-        print(f"❌ CSV file not found: {input_file}")
+        print(f"CSV file not found: {input_file}")
         return
 
     try:
@@ -59,11 +59,11 @@ def main():
         conn.close()
         logging.info(f"Cleaned database saved: {output_db}")
 
-        print(f"✅ Cleaning done. Files saved to output/")
+        print(f"Cleaning done. Files saved to output/")
 
     except Exception as e:
         logging.error(f"Error cleaning data for type '{pokemon_type}': {e}")
-        print(f"❌ Cleaning failed: {e}")
+        print(f"Cleaning failed: {e}")
 
 # -------------------------------
 # Entry point

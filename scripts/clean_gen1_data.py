@@ -16,11 +16,11 @@ logging.basicConfig(
 # Main Cleaning & Transformation Process
 # -------------------------------
 try:
-    # Load the raw CSV file (from output folder)
+    # Load the raw data
     df = pd.read_csv("data/pokemon_gen1.csv")
     logging.info("CSV file loaded successfully.")
 
-    # Capitalize the first letter of each Pokémon name
+    # Standardize name capitalization
     df["Name"] = df["Name"].str.capitalize()
 
     # Flag Pokémon with very low weight for manual review
@@ -29,7 +29,7 @@ try:
     # Drop rows with any missing values
     df.dropna(inplace=True)
 
-    # Split 'Types' into Primary and Secondary types
+    # Split types into separate columns
     types_split = df["Types"].str.split(", ", expand=True)
     df["PrimaryType"] = types_split[0]
     df["SecondaryType"] = types_split[1]  # NaN if no secondary type
@@ -43,7 +43,6 @@ except Exception as e:
 
 # -------------------------------
 # Save Cleaned Data to SQLite Database
-# -------------------------------
 try:
     conn = sqlite3.connect("output/pokemon_gen1.db")
     df.to_sql("pokemon", conn, if_exists="replace", index=False)

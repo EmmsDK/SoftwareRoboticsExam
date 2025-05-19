@@ -1,0 +1,6 @@
+2025-05-15 12:39:12,789 - INFO - PokeAPI is reachable.
+2025-05-15 12:39:12,789 - INFO - Opened data/pokemon_gen1.csv for writing.
+2025-05-15 12:39:17,745 - INFO - All data written to CSV successfully.
+2025-05-15 12:41:46,635 - INFO - PokeAPI is reachable.
+2025-05-15 12:41:46,636 - INFO - Opened data/pokemon_gen1.csv for writing.
+2025-05-15 12:41:51,417 - INFO - All data written to CSV successfully.

@@ -1,60 +1,81 @@
-# Template: Python - Minimal
+## Project: Pokémon Data Automation
 
-This template leverages the new [Python framework](https://github.com/robocorp/robocorp), the [libraries](https://github.com/robocorp/robocorp/blob/master/docs/README.md#python-libraries) from to same project as well.
+This project automates the retrieval and processing of Pokémon data from the public PokeAPI.  
+It supports fetching either the full first generation (Gen1) or filtering by specific types (e.g., Fire, Grass).  
+The data is cleaned, validated, and saved into Excel sheets and SQLite databases for further analysis or reporting.
 
-The template provides you with the basic structure of a Python project: logging out of the box and controlling your tasks without fiddling with the base Python stuff. The environment contains the most used libraries, so you do not have to start thinking about those right away. 
+### Use Case
 
-👉 Other templates are available as well via our tooling and on our [Portal](https://robocorp.com/portal/tag/template)
+Imagine a data analyst needing structured and clean Pokémon data for analytics or reporting in Excel/Power BI.  
+Instead of manually scraping or copying data from a website, this robot automates:
 
-## Running
+- Fetching data from the PokeAPI.
+- Cleaning and transforming the dataset.
+- Saving the result into Excel and SQLite formats.
+- Logging and error handling for reliability.
 
-#### VS Code
-1. Get [Robocorp Code](https://robocorp.com/docs/developer-tools/visual-studio-code/extension-features) -extension for VS Code.
-1. You'll get an easy-to-use side panel and powerful command-palette commands for running, debugging, code completion, docs, etc.
+This pipeline reduces manual work and ensures up-to-date Pokémon data on demand.
 
-#### Command line
+### Available Tasks
 
-1. [Get RCC](https://github.com/robocorp/rcc?tab=readme-ov-file#getting-started)
-1. Use the command: `rcc run`
+- `Fetch Gen1`: Retrieves all 151 first-generation Pokémon and saves as CSV.
+- `Clean Gen1 Data`: Cleans and transforms Gen1 data, saving to Excel and SQLite.
+- `Full Pipeline Gen1`: Runs both fetch and clean steps for Gen1 Pokémon.
+- `Fetch By Type`: Fetches Pokémon based on a specific type (e.g., "fire", "water").
+- `Clean By Type`: Cleans and saves Pokémon of a specific type.
+- `Full Pipeline Type`: Fetches and cleans data by type in one step.
 
-## Results
+### Output Files
 
-🚀 After running the bot, check out the `log.html` under the `output` -folder.
+- `data/`: Raw CSV files (`pokemon_gen1.csv`, `pokemon_type_<type>.csv`)
+- `output/`: Clean Excel and SQLite databases (`pokemon_gen1_cleaned.xlsx`, `pokemon_type_<type>.db`)
+- `logs/`: Log files capturing runtime details, API errors, and debug messages
 
-## Dependencies
+###  How to Run
 
-We strongly recommend getting familiar with adding your dependencies in [conda.yaml](conda.yaml) to control your Python dependencies and the whole Python environment for your automation.
+Use `rcc` to execute the different tasks defined in your `robot.yaml`. Below are the available pipelines and how to run them. 
+You can also manually run them using the Robo corp extension.
 
-<details>
-  <summary>🙋‍♂️ "Why not just pip install...?"</summary>
+---
 
-Think of [conda.yaml](conda.yaml) as an equivalent of the requirements.txt, but much better. 👩‍💻 With `conda.yaml`, you are not just controlling your PyPI dependencies; you control the complete Python environment, which makes things repeatable and easy.
+####  Full Gen1 Pipeline
+Fetches and cleans all first-generation Pokémon (IDs 1–151), then stores the cleaned data in both Excel and SQLite formats.
 
-👉 You will probably need to run your code on another machine quite soon, so by using `conda.yaml`:
-- You can avoid `Works on my machine` -cases
-- You do not need to manage Python installations on all the machines
-- You can control exactly which version of Python your automation will run on 
-  - You'll also control the pip version to avoid dep. resolution changes
-- No need for venv, pyenv, ... tooling and knowledge sharing inside your team.
-- Define dependencies in conda.yaml, let our tooling do the heavy lifting.
-- You get all the content of [conda-forge](https://prefix.dev/channels/conda-forge) without any extra tooling
+```bash
+rcc run -t "Full Pipeline Gen1" 
+```
 
-> Dive deeper with [these](https://github.com/robocorp/rcc/blob/master/docs/recipes.md#what-is-in-condayaml) resources.
+#### Full Type-Based Pipeline
+Fetches and cleans all Pokémon of a specified type (e.g., fire, grass, water), then stores the cleaned data in both Excel and SQLite.
 
-</details>
-<br/>
+```bash
+rcc run -t "Full Pipeline By Type" -- fire
+```
 
-> The full power of [rpaframework](https://robocorp.com/docs/python/rpa-framework) -libraries is also available on Python as a backup while we implement the new Python libraries.
+#### Fetch Gen1 Data Only
+Only performs data extraction for Gen1 Pokémon and saves it to a CSV file (data/pokemon_gen1.csv).
 
-## What now?
+```bash
+rcc run -t "Fetch Gen1"
+```
 
-🚀 Now, go get'em
+#### Clean Gen1 Data Only
+Reads the raw CSV for Gen1 and performs data cleaning, then saves the cleaned output to Excel and SQLite.
 
-Start writing Python and remember that the AI/LLM's out there are getting really good and creating Python code specifically.
+```bash
+rcc run -t "Clean Gen1"
+```
 
-👉 Try out [Robocorp ReMark 💬](https://chat.robocorp.com)
+#### Fetch Pokémon by Type Only
+Fetches raw Pokémon data based on type (e.g., grass, electric, water) and saves it as a CSV in the data/ folder.
 
-For more information, do not forget to check out the following:
-- [Robocorp Documentation -site](https://robocorp.com/docs)
-- [Portal for more examples](https://robocorp.com/portal)
-- Follow our main [robocorp -repository](https://github.com/robocorp/robocorp) as it is the main location where we developed the libraries and the framework.
+```bash
+rcc run -t "Fetch By Type" -- grass
+```
+
+#### Clean Pokémon by Type Only
+Reads a previously fetched type-based CSV and performs cleaning, outputting Excel and database files to output/.
+
+```bash
+rcc run -t "Clean By Type" -- electric
+```

@@ -1,0 +1,153 @@
+ID,Name,Height,Weight,Types
+1,bulbasaur,7,69,"grass, poison"
+2,ivysaur,10,130,"grass, poison"
+3,venusaur,20,1000,"grass, poison"
+43,oddish,5,54,"grass, poison"
+44,gloom,8,86,"grass, poison"
+45,vileplume,12,186,"grass, poison"
+46,paras,3,54,"bug, grass"
+47,parasect,10,295,"bug, grass"
+69,bellsprout,7,40,"grass, poison"
+70,weepinbell,10,64,"grass, poison"
+71,victreebel,17,155,"grass, poison"
+102,exeggcute,4,25,"grass, psychic"
+103,exeggutor,20,1200,"grass, psychic"
+114,tangela,10,350,grass
+152,chikorita,9,64,grass
+153,bayleef,12,158,grass
+154,meganium,18,1005,grass
+182,bellossom,4,58,grass
+187,hoppip,4,5,"grass, flying"
+188,skiploom,6,10,"grass, flying"
+189,jumpluff,8,30,"grass, flying"
+191,sunkern,3,18,grass
+192,sunflora,8,85,grass
+251,celebi,6,50,"psychic, grass"
+252,treecko,5,50,grass
+253,grovyle,9,216,grass
+254,sceptile,17,522,grass
+270,lotad,5,26,"water, grass"
+271,lombre,12,325,"water, grass"
+272,ludicolo,15,550,"water, grass"
+273,seedot,5,40,grass
+274,nuzleaf,10,280,"grass, dark"
+275,shiftry,13,596,"grass, dark"
+285,shroomish,4,45,grass
+286,breloom,12,392,"grass, fighting"
+315,roselia,3,20,"grass, poison"
+331,cacnea,4,513,grass
+332,cacturne,13,774,"grass, dark"
+345,lileep,10,238,"rock, grass"
+346,cradily,15,604,"rock, grass"
+357,tropius,20,1000,"grass, flying"
+387,turtwig,4,102,grass
+388,grotle,11,970,grass
+389,torterra,22,3100,"grass, ground"
+406,budew,2,12,"grass, poison"
+407,roserade,9,145,"grass, poison"
+413,wormadam-plant,5,65,"bug, grass"
+420,cherubi,4,33,grass
+421,cherrim,5,93,grass
+455,carnivine,14,270,grass
+459,snover,10,505,"grass, ice"
+460,abomasnow,22,1355,"grass, ice"
+465,tangrowth,20,1286,grass
+470,leafeon,10,255,grass
+492,shaymin-land,2,21,grass
+495,snivy,6,81,grass
+496,servine,8,160,grass
+497,serperior,33,630,grass
+511,pansage,6,105,grass
+512,simisage,11,305,grass
+540,sewaddle,3,25,"bug, grass"
+541,swadloon,5,73,"bug, grass"
+542,leavanny,12,205,"bug, grass"
+546,cottonee,3,6,"grass, fairy"
+547,whimsicott,7,66,"grass, fairy"
+548,petilil,5,66,grass
+549,lilligant,11,163,grass
+556,maractus,10,280,grass
+585,deerling,6,195,"normal, grass"
+586,sawsbuck,19,925,"normal, grass"
+590,foongus,2,10,"grass, poison"
+591,amoonguss,6,105,"grass, poison"
+597,ferroseed,6,188,"grass, steel"
+598,ferrothorn,10,1100,"grass, steel"
+640,virizion,20,2000,"grass, fighting"
+650,chespin,4,90,grass
+651,quilladin,7,290,grass
+652,chesnaught,16,900,"grass, fighting"
+672,skiddo,9,310,grass
+673,gogoat,17,910,grass
+708,phantump,4,70,"ghost, grass"
+709,trevenant,15,710,"ghost, grass"
+710,pumpkaboo-average,4,50,"ghost, grass"
+711,gourgeist-average,9,125,"ghost, grass"
+722,rowlet,3,15,"grass, flying"
+723,dartrix,7,160,"grass, flying"
+724,decidueye,16,366,"grass, ghost"
+753,fomantis,3,15,grass
+754,lurantis,9,185,grass
+755,morelull,2,15,"grass, fairy"
+756,shiinotic,10,115,"grass, fairy"
+761,bounsweet,3,32,grass
+762,steenee,7,82,grass
+763,tsareena,12,214,grass
+781,dhelmise,39,2100,"ghost, grass"
+787,tapu-bulu,19,455,"grass, fairy"
+798,kartana,3,1,"grass, steel"
+810,grookey,3,50,grass
+811,thwackey,7,140,grass
+812,rillaboom,21,900,grass
+829,gossifleur,4,22,grass
+830,eldegoss,5,25,grass
+840,applin,2,5,"grass, dragon"
+841,flapple,3,10,"grass, dragon"
+842,appletun,4,130,"grass, dragon"
+893,zarude,18,700,"dark, grass"
+898,calyrex,11,77,"psychic, grass"
+906,sprigatito,4,41,grass
+907,floragato,9,122,grass
+908,meowscarada,15,312,"grass, dark"
+928,smoliv,3,65,"grass, normal"
+929,dolliv,6,119,"grass, normal"
+930,arboliva,14,482,"grass, normal"
+946,bramblin,6,6,"grass, ghost"
+947,brambleghast,12,60,"grass, ghost"
+948,toedscool,9,330,"ground, grass"
+949,toedscruel,19,580,"ground, grass"
+951,capsakid,3,30,grass
+952,scovillain,9,150,"grass, fire"
+986,brute-bonnet,12,210,"grass, dark"
+1001,wo-chien,15,742,"dark, grass"
+1010,iron-leaves,15,1250,"grass, psychic"
+1011,dipplin,4,97,"grass, dragon"
+1012,poltchageist,1,11,"grass, ghost"
+1013,sinistcha,2,22,"grass, ghost"
+1017,ogerpon,12,398,grass
+1019,hydrapple,18,930,"grass, dragon"
+10006,shaymin-sky,4,52,"grass, flying"
+10012,rotom-mow,3,3,"electric, grass"
+10027,pumpkaboo-small,3,35,"ghost, grass"
+10028,pumpkaboo-large,5,75,"ghost, grass"
+10029,pumpkaboo-super,8,150,"ghost, grass"
+10030,gourgeist-small,7,95,"ghost, grass"
+10031,gourgeist-large,11,140,"ghost, grass"
+10032,gourgeist-super,17,390,"ghost, grass"
+10033,venusaur-mega,24,1555,"grass, poison"
+10060,abomasnow-mega,27,1850,"grass, ice"
+10065,sceptile-mega,19,552,"grass, dragon"
+10114,exeggutor-alola,109,4156,"grass, dragon"
+10128,lurantis-totem,15,580,grass
+10192,zarude-dada,18,700,"dark, grass"
+10195,venusaur-gmax,240,10000,"grass, poison"
+10209,rillaboom-gmax,280,10000,grass
+10216,flapple-gmax,240,10000,"grass, dragon"
+10217,appletun-gmax,240,10000,"grass, dragon"
+10231,voltorb-hisui,5,130,"electric, grass"
+10232,electrode-hisui,12,710,"electric, grass"
+10237,lilligant-hisui,12,192,"grass, fighting"
+10244,decidueye-hisui,16,370,"grass, fighting"
+10273,ogerpon-wellspring-mask,12,398,"grass, water"
+10274,ogerpon-hearthflame-mask,12,398,"grass, fire"
+10275,ogerpon-cornerstone-mask,12,398,"grass, rock"

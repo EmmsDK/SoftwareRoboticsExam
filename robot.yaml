@@ -2,8 +2,29 @@
 # https://github.com/robocorp/rcc/blob/master/docs/recipes.md#what-is-in-robotyaml
 
 tasks:
-  Run Task:
-    shell: python -m robocorp.tasks run tasks.py
+  # Gen 1: Extracts all first generation Pokémon
+  Fetch Gen1:
+    shell: python -m robocorp.tasks run scripts/fetch_all_gen1.py
+
+  # Gen 1: Cleans and stores to Excel + DB
+  Clean Gen1:
+    shell: python scripts/clean_gen1_data.py
+
+  # Gen 1: Runs both above steps automatically
+  Full Pipeline Gen1:
+    shell: python scripts/full_pipeline_gen1.py
+
+  # Type-Based: Fetches Pokémon by a specified type (passed via -- <type>)
+  Fetch By Type:
+    shell: python scripts/fetch_by_type.py
+
+  # Type-Based: Cleans and stores data for a given type (passed via -- <type>)
+  Clean By Type:
+    shell: python scripts/clean_type_data.py
+
+  # Type-Based: Runs both fetch + clean for a given type
+  Full Pipeline By Type:
+    shell: python scripts/full_pipeline_type.py
 
 environmentConfigs:
   - environment_windows_amd64_freeze.yaml
@@ -15,7 +36,9 @@ artifactsDir: output
 
 PATH:
   - .
+
 PYTHONPATH:
   - .
+
 ignoreFiles:
   - .gitignore

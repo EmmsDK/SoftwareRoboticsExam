@@ -59,7 +59,7 @@ def main():
         return
 
     pokemon_type = sys.argv[1].lower()
-    print(f"\n🔎 Fetching Pokémon of type '{pokemon_type}'...")
+    print(f"\nFetching Pokémon of type '{pokemon_type}'...")
 
     names = get_pokemon_names_by_type(pokemon_type)
     if not names:
